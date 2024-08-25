@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI-Driven Login Page</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <h1 class="glitch-text" data-text="Welcome">Welcome</h1>
+            <p id="prompt">Enter your username</p>
+            <input type="text" id="username" placeholder="Username" autocomplete="off">
+            <input type="password" id="password" placeholder="Password" autocomplete="off" style="display: none;">
+            <button id="next-btn">Next</button>
+            <button id="login-btn" style="display: none;">Login</button>
+        </div>
+    </div>
+    <!-- Firebase and script inclusion -->
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/9.22.2/firebase-database.js"></script>
+    <script type="module" src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,127 @@
+/* Global styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+    background-color: #0b0e16;
+    color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    perspective: 1000px;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 400px;
+    background: rgba(15, 15, 35, 0.8);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(0, 255, 217, 0.8), 0 0 50px rgba(0, 255, 217, 0.3);
+    text-align: center;
+    transform-style: preserve-3d;
+    animation: floating 6s ease-in-out infinite;
+    backdrop-filter: blur(10px);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #00ffd9;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px #00ffd9, 0 0 20px #00ffd9, 0 0 30px #00ffd9;
+}
+
+#prompt {
+    font-size: 1.2em;
+    margin-bottom: 20px;
+    color: #00ffd9;
+    text-shadow: 0 0 5px #00ffd9, 0 0 10px #00ffd9;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 25px;
+    background: rgba(0, 255, 217, 0.1);
+    color: #00ffd9;
+    text-align: center;
+    font-size: 1.1em;
+    box-shadow: 0 0 15px rgba(0, 255, 217, 0.4), inset 0 0 10px rgba(0, 255, 217, 0.3);
+    outline: none;
+    transition: all 0.3s ease-in-out;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    box-shadow: 0 0 20px rgba(0, 255, 217, 0.6), inset 0 0 15px rgba(0, 255, 217, 0.5);
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 25px;
+    background-color: #00ffd9;
+    color: #0b0e16;
+    font-size: 1.2em;
+    cursor: pointer;
+    box-shadow: 0 0 20px rgba(0, 255, 217, 0.5);
+    transition: all 0.3s ease-in-out;
+    margin-bottom: 20px;
+}
+
+button:hover {
+    background-color: #008f74;
+    box-shadow: 0 0 30px rgba(0, 255, 217, 0.8);
+}
+
+button:active {
+    transform: scale(0.95);
+}
+
+/* Floating animation */
+@keyframes floating {
+
+    0%,
+    100% {
+        transform: translateY(0) rotateX(0) rotateY(0);
+    }
+
+    50% {
+        transform: translateY(-15px) rotateX(5deg) rotateY(5deg);
+    }
+}
+
+/* Additional AI-themed background effects */
+body::before {
+    content: "";
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, transparent, #0b0e16, #0b0e16);
+    animation: rotateBackground 20s linear infinite;
+    z-index: -1;
+}
+
+@keyframes rotateBackground {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
