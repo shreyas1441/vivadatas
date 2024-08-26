@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>VIVA AI</title>
 
-
     <link rel="stylesheet" href="styles2.css">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
@@ -16,13 +15,11 @@
         <h1>VIVA AI</h1>
         <button id="alert-device-btn">Loading...</button>
         <button id="silent-mode-btn" class="silent-mode-btn">🔕</button>
+        <button class="launch-dial-pad-btn" onclick="launchDialPad()">VIVA Chatbot</button> <!-- New button added -->
         <button class="logout" onclick="logout()">Logout</button>
     </header>
 
     <script>
-
-
-
         function logout() {
             localStorage.removeItem('loggedIn'); // Clear the login status
             window.location.href = 'index.html'; // Redirect to the login page
@@ -56,7 +53,6 @@
             document.body.appendChild(overlay);
         }
 
-        // Example usage in the copyToClipboard function
         function copyToClipboard(button) {
             const card = button.closest('.card');
             const content = card.querySelector('.card-content').textContent;
@@ -68,8 +64,9 @@
             });
         }
 
-
-
+        function launchDialPad() {
+            window.location.href = 'dial-pad.html'; // Redirect to the dial-pad page
+        }
     </script>
 
     <div id="data-container">
@@ -80,9 +77,6 @@
         </div>
         <!-- Add more cards as needed -->
     </div>
-
-
-
 
     <footer>
         <p>&copy; 2024 VIVA AI. All rights reserved.</p>
