@@ -1,0 +1,297 @@
+/* styles.css */
+
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.chat-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    max-width: 100vw;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #121212;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    background: #1e1e1e;
+    border-top: 2px solid #333;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #333;
+    color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background: #444;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #0a74da;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+button:active {
+    background: #004a9e;
+}
+
+.message {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.user {
+    align-items: flex-end;
+}
+
+.message.bot {
+    align-items: flex-start;
+}
+
+.bubble {
+    display: inline-block;
+    padding: 10px 15px;
+    border-radius: 15px;
+    background: #2d2d2d;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+    max-width: 75%;
+}
+
+.message.user .bubble {
+    background: #72a6ea;
+    color: #000000;
+}
+
+.message.bot .bubble {
+    background: #e4b8b8;
+    color: #0c0000;
+}
+
+.bubble::after {
+    content: '';
+    position: absolute;
+    bottom: 100%;
+    left: 10px;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.message.user .bubble::after {
+    border-color: transparent transparent #1a73e8 transparent;
+}
+
+.message.bot .bubble::after {
+    border-color: transparent transparent #333 transparent;
+}
+
+.typing-indicator {
+    animation: typing 1s infinite;
+}
+
+/* styles.css */
+
+.input-container {
+    display: flex;
+    padding: 10px;
+    background: #1e1e1e;
+    border-top: 2px solid #333;
+    align-items: center;
+    gap: 10px;
+}
+
+input[type="file"] {
+    border: none;
+    padding: 5px;
+    background: #0a74da;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+}
+
+input[type="file"]:hover {
+    background: #005bb5;
+}
+
+
+#mode-toggle {
+    margin-bottom: 10px;
+}
+
+#mode-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateX(-10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.bubble {
+    background-color: #f0f0f0;
+    /* Background color of the bubble */
+    padding: 10px 15px;
+    /* Padding inside the bubble */
+    border-radius: 20px;
+    /* Rounded corners for the bubble */
+    max-width: 60%;
+    /* Max width of the bubble */
+    margin: 5px 0;
+    /* Margin around the bubble */
+    position: relative;
+    /* Relative positioning for further styling if needed */
+    box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.1);
+    /* Slight shadow for a 3D effect */
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.bubble:hover {
+    background-color: #e0e0e0;
+    /* Slightly darker background on hover */
+    transform: translateY(-2px);
+    /* Lift the bubble slightly on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.15);
+    /* Darker shadow on hover */
+}
+
+.bubble {
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    /* Colorful gradient background */
+    padding: 12px 18px;
+    /* Padding inside the bubble */
+    border-radius: 25px;
+    /* Rounded corners for the bubble */
+    max-width: 60%;
+    /* Max width of the bubble */
+    margin: 10px 0;
+    /* Margin around the bubble */
+    position: relative;
+    /* Relative positioning for further styling if needed */
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.2);
+    /* Pronounced shadow for a 3D effect */
+    color: rgb(0, 0, 0);
+    /* Text color */
+    font-family: 'Arial', sans-serif;
+    /* Font style */
+    font-size: 16px;
+    /* Font size */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    /* Smooth transition for hover effect */
+}
+
+/* Hover effect */
+.bubble:hover {
+    transform: translateY(-8px) rotateX(10deg) rotateY(10deg);
+    /* 3D lift and rotation on hover */
+    box-shadow: 0px 15px 25px rgba(0, 0, 0, 0.3);
+    /* Enhanced shadow on hover */
+    background: linear-gradient(135deg, #ff4e50 0%, #f9d423 100%);
+    /* Change gradient on hover */
+}
+
+/* Adding a subtle border for the bubble */
+.bubble::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    color: black;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background: linear-gradient(135deg, #f0f0f0, #e0e0e0);
+    border-radius: 30px;
+    z-index: -1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+
+.fade-word {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.message .bubble {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+
+#toggle-label {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #2196F3;
+    color: #fff;
+    border-radius: 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#mode-checkbox:checked+#toggle-label {
+    background-color: #4CAF50;
+}
+
+
+@keyframes typing {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
