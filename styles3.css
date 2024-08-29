@@ -1,0 +1,301 @@
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: #1e1e1e;
+    color: #f0f0f0;
+}
+
+.chat-container {
+    position: relative;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+.chat-box {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+    background: #121212;
+    border-top: 2px solid #333;
+    border-bottom: 2px solid #333;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+}
+
+.input-container {
+    display: flex;
+    position: relative;
+    padding: 10px;
+    background: #1e1e1e;
+    border-top: 2px solid #333;
+    align-items: center;
+    gap: 10px;
+}
+
+#suggestion-popup {
+    position: absolute;
+    bottom: 60px;
+    /* Adjust according to your layout */
+    left: 0;
+    width: 100%;
+    background-color: rgb(0, 0, 0);
+    border: 1px solid #000000;
+    border-radius: 4px;
+    max-height: 150px;
+    overflow-y: auto;
+    display: none;
+    z-index: 1000;
+}
+
+.suggestion-item {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.suggestion-item:hover {
+    background-color: #30d15e;
+}
+
+input[type="text"] {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    outline: none;
+    background: #333;
+    color: #f0f0f0;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease;
+}
+
+input[type="text"]:focus {
+    background: #444;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 10px;
+    background: #0a74da;
+    color: #fff;
+    cursor: pointer;
+    box-shadow: 0 0 5px rgba(255, 255, 255, 0.2);
+    transition: background 0.3s ease, box-shadow 0.3s ease;
+}
+
+button:hover {
+    background: #005bb5;
+}
+
+button:active {
+    background: #004a9e;
+}
+
+.message {
+    margin-bottom: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.message.user {
+    align-items: flex-end;
+}
+
+.message.bot {
+    align-items: flex-start;
+}
+
+.bubble {
+    display: inline-block;
+    padding: 12px 18px;
+    border-radius: 25px;
+    background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+    max-width: 60%;
+    margin: 10px 0;
+    position: relative;
+    box-shadow: 0px 8px 15px rgba(0, 0, 0, 0);
+    color: rgb(0, 0, 0);
+    font-family: 'Arial', sans-serif;
+    font-size: 16px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.bubble:hover {
+    transform: translateY(-12px) scale(1.05);
+    box-shadow: 0px 20px 30px rgba(0, 0, 0, 0);
+    background: linear-gradient(135deg, #06060600 0%, #1c1c1c00 100%);
+}
+
+.bubble::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    bottom: -5px;
+    left: -5px;
+    background: linear-gradient(135deg, #00000000, #00000000);
+    border-radius: 30px;
+    z-index: -1;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.typing-indicator {
+    animation: typing 1s infinite;
+}
+
+.fade-word {
+    display: inline-block;
+    opacity: 0;
+    animation: fadeIn 0.5s forwards;
+}
+
+.message .bubble {
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
+}
+
+#mode-toggle {
+    margin-bottom: 10px;
+}
+
+#mode-checkbox {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+#toggle-label {
+    cursor: pointer;
+    padding: 5px 10px;
+    background-color: #2196F3;
+    color: #fff;
+    border-radius: 20px;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+#mode-checkbox:checked+#toggle-label {
+    background-color: #b13b84;
+}
+
+@keyframes typing {
+    0% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Media Queries */
+@media (max-width: 600px) {
+    .chat-box {
+        padding: 10px;
+    }
+
+    .input-container {
+        flex-direction: column;
+        gap: 5px;
+    }
+
+    input[type="text"] {
+        width: 100%;
+    }
+
+    button {
+        width: 100%;
+    }
+
+    #mode-toggle {
+        margin-top: 10px;
+    }
+}
+
+
+
+/* Add these styles to your CSS file or within a <style> tag */
+
+.message {
+    position: relative;
+    margin-bottom: 10px;
+}
+
+.bubble {
+    padding: 10px;
+    border-radius: 10px;
+    background: rgba(0, 0, 0, 0);
+    color: #00ffcc;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 16px;
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.6s cubic-bezier(0.25, 0.8, 0.25, 1), background 0.6s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transform-style: preserve-3d;
+    /* Preserve 3D space for children */
+    perspective: 1200px;
+    /* Enhance the depth of the 3D effect */
+}
+
+.bubble.glow {
+    animation: glow 1s infinite;
+}
+
+.bubble.update {
+    animation: update 0.5s forwards;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 25px #00ffcc;
+    }
+
+    50% {
+        text-shadow: 0 0 10px #00ffcc, 0 0 20px #00ffcc, 0 0 30px #00ffcc, 0 0 40px #00ffcc, 0 0 50px #00ffcc;
+    }
+
+    100% {
+        text-shadow: 0 0 5px #00ffcc, 0 0 10px #00ffcc, 0 0 15px #00ffcc, 0 0 20px #00ffcc, 0 0 25px #00ffcc;
+    }
+}
+
+@keyframes update {
+    0% {
+        transform: scale(1.1);
+        opacity: 0;
+    }
+
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+
+@media (min-width: 601px) {
+    .input-container {
+        flex-direction: row;
+    }
+
+    input[type="text"] {
+        width: auto;
+    }
+
+    button {
+        width: auto;
+    }
+}
